@@ -4,9 +4,7 @@
   "private": true,
   "homepage": "https://MikeTheReader.github.io/show-and-hide",
   "devDependencies": {
-    "react-scripts": "1.0.10",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "react-scripts": "1.0.10"
   },
   "dependencies": {
     "gh-pages": "^1.0.0",
@@ -14,6 +12,8 @@
     "react-dom": "^15.6.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
