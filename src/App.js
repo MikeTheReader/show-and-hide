@@ -14,12 +14,13 @@ class App extends Component {
             activeTab: 'one',
             tabs: ['one', 'two', 'three']
         };
+        this.changeTab = this.changeTab.bind(this);
     }
 
-    changeTab(tab) {
+    changeTab(event) {
         this.setState({
             ...this.state,
-            activeTab: tab
+            activeTab: event.target.getAttribute('data-tab-name')
         });
     }
 
@@ -43,10 +44,11 @@ class App extends Component {
                 </div>
 
                 <div className="tabs">
-                    {this.state.tabs.map((tabName) => (
-                        <div
+                    {this.state.tabs.map((tabName, index) => (
+                        <div key={index}
+                            data-tab-name={tabName}
                             className={this.state.activeTab === tabName ? 'tab active' : 'tab'}
-                            onClick={() => this.changeTab(tabName)}>{tabName}</div>
+                            onClick={this.changeTab}>{tabName}</div>
                     ))}
                 </div>
                 <div className="tabContentHolder">
