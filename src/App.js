@@ -10,7 +10,10 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { activeTab: 'one' };
+    this.state = {
+      activeTab: 'one',
+      tabs: ['one', 'two', 'three']
+    };
   }
 
   changeTab(tab) {
@@ -40,32 +43,11 @@ class App extends Component {
         </div>
 
         <div className="tabs">
-          <input
-            onClick={(event) => this.changeTab(event.target.value)}
-            type="radio"
-            name="tabRadio"
-            id="one"
-            value="one"
-            checked={this.state.activeTab === 'one'} />
-          <label className='tab' htmlFor="one">One</label>
-
-          <input
-            onClick={(event) => this.changeTab(event.target.value)}
-            type="radio"
-            name="tabRadio"
-            id="two"
-            value="two"
-            checked={this.state.activeTab === 'two'} />
-          <label className='tab' htmlFor="two">Two</label>
-
-          <input
-            onClick={(event) => this.changeTab(event.target.value)}
-            type="radio"
-            name="tabRadio"
-            id="three"
-            value="three"
-            checked={this.state.activeTab === 'three'} />
-          <label className='tab' htmlFor="three">Three</label>
+          {this.state.tabs.map((tabName) => (
+            <div
+              className={this.state.activeTab === tabName ? 'tab active' : 'tab'}
+              onClick={() => this.changeTab(tabName)}>{tabName}</div>
+          ))}
         </div>
         <div className="tabContentHolder">
           <div className="tabContent">

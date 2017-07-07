@@ -34,20 +34,18 @@
   padding: 20px;
 }
 
-.tabs > input[type=radio] {
-  display: none;
-}
-
 .tab {
+  display: inline-block;
   text-align: center;
   width: 100px;
   padding: 20px;
   font-weight: bold;
   background-color: #ccc;
   border: 1px solid #333;
+  text-transform: capitalize;
 }
 
-input[type=radio]:checked + .tab {
+.tab.active {
   background-color: #eee;
 }
 
