@@ -36,6 +36,7 @@
 
 .tab {
   display: inline-block;
+  cursor: pointer;
   text-align: center;
   width: 100px;
   padding: 20px;

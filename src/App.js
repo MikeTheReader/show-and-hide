@@ -29,7 +29,7 @@ class App extends Component {
                 return <TabOne />
             case 'two':
                 return <TabTwo />
-            case 'three':
+            default:
                 return <TabThree />
         }
     }
